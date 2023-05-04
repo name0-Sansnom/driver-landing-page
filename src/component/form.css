@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.form_box{
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.6rem;
+}
+
+.form_txt{
+    font-family: 'Poppins', sans-serif;
+}
+
+.form_txt h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.form_txt p {
+    font-size: 0.7rem;
+    width: 100%;
+}
+
+.agreement,
+.agreement a {
+    font-size: 12px;
+}
+
+.agreement a {
+    color: var(--link_color);
+    text-decoration: none;
+}
+
+.submit {
+    background-color: var(--btn_color);
+    color: #fff;
+}
