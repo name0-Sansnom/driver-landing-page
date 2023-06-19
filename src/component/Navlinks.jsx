@@ -23,7 +23,7 @@ const Navlinks = () => {
             <Nav.Link href="/Cities">cities</Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Button variant="secondary" as="a" href="/login">Login</Button>
+        <Button className='submit' variant="secondary" as="a" href="/login">Login</Button>
       </Container>
     </Navbar>
   );

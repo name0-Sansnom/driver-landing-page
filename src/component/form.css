@@ -6,6 +6,11 @@
     padding: 0;
 }
 
+Form a {
+    color: var(--link_color);
+    text-decoration:  none;
+}
+
 .form_box{
     padding: 2rem;
     background-color: #fff;
@@ -31,12 +36,11 @@
     font-size: 12px;
 }
 
-.agreement a {
-    color: var(--link_color);
-    text-decoration: none;
-}
-
 .submit {
     background-color: var(--btn_color);
+    border-radius: 1rem;
+}
+
+.submit Button {
     color: #fff;
 }

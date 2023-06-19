@@ -32,3 +32,10 @@
     font-size: 0.8rem;
     margin-top: 1rem;
 }
+
+.card_txt a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+}

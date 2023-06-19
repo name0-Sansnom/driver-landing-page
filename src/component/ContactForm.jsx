@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import PhoneInput from "react-phone-input-2";
+import {
+  CountryDropdown,
+  RegionDropdown,
+  CountryRegionData,
+} from "react-country-region-selector";
 import "react-phone-input-2/lib/style.css";
+import cities from "cities.json";
 import "./form.css";
 
 const ContactForm = () => {
@@ -9,13 +15,15 @@ const ContactForm = () => {
   const [phone, setPhone] = useState("");
   const [city, setCity] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
+  const [country, setCountry] = useState("");
+  const [region, setRegion] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Form submitted");
     console.log("Email:", email);
     console.log("Phone:", phone);
-    console.log("City:", city);
+    // console.log("City:", city);
     console.log("Agree to Terms:", agreeToTerms);
   };
 
@@ -25,7 +33,7 @@ const ContactForm = () => {
         <h3>Become a Bolt Driver</h3>
         <p>
           if you have multiple cars or drivers{" "}
-          <span>sign up as a fleet owner</span>
+          <a href="google.com">sign up as a fleet owner</a>
         </p>
       </div>
       <Form.Group className="mb-3" controlId="formEmail">
@@ -41,22 +49,41 @@ const ContactForm = () => {
       <Form.Group className="mb-3" controlId="formPhone">
         <Form.Label>Phone number</Form.Label>
         <PhoneInput
-          country="nl"
+          // country="nl"
           enableSearch
-          enableAreaCodes={["ca"]}
+          // enableAreaCodes={["ca"]}
           value={phone}
           onChange={(value) => setPhone(value)}
         />
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formCity">
-        <Form.Label>City</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter city"
+        {/* <Form.Label>City</Form.Label> */}
+        <select
+          className="form-select"
           value={city}
           onChange={(event) => setCity(event.target.value)}
-        />
+        >
+          {cities.map((name) => (
+            <option key={name.city} value={name.city}>
+              {name.city}
+            </option>
+          ))}
+        </select>
+        <Form.Label> Select City</Form.Label>
+        <div className="d-flex">
+          <CountryDropdown
+            value={country}
+            onChange={(val) => setCountry(val)}
+            className="form-select me-2"
+          />
+          <RegionDropdown
+            country={country}
+            value={region}
+            onChange={(val) => setRegion(val)}
+            className="form-select"
+          />
+        </div>
       </Form.Group>
 
       <Form.Group className="mb-3 agreement" controlId="formCheckbox">
